@@ -92,8 +92,9 @@ Hooks.once("ready", () => {
 Hooks.on("preUpdateActor", (actor, updateData) => {
   const newHP = updateData?.data?.attributes?.hp?.value;
   const maxHP = actor?.data?.data?.attributes?.hp?.max;
+  const ignore_token = actor.getFlag('hitpoint-tint', 'ignore_token');
 
-  if (!isNaN(newHP) && !isNaN(newHP)) {
+  if (!isNaN(newHP) && !isNaN(newHP) && !ignore_token) {
     var newColor = getColorFromHPPercent(newHP / maxHP);
 
     console.log(`Hitpoints changed to ${newHP}`);
@@ -103,7 +104,7 @@ Hooks.on("preUpdateActor", (actor, updateData) => {
     {
       canvas.scene.updateEmbeddedDocuments(actor.parent.documentName,  [{
         tint: newColor,
-        _id: actor.parent.id,
+        _id: actor.parent.id,.  
       }]);
     }
 
