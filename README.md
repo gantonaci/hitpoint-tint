@@ -8,7 +8,7 @@ Intended to make it easier for players to see approximate health of creatures wi
 ![Demo Animation](demo/HP-Tint-Example.gif)
 
 ## Ignore tokens
-The folloing macro will mark the selected tokens to be ignored by the module
+The following macro will mark the selected tokens to be ignored by the module:
 ```js
 canvas.tokens.controlled.map( token => {
 	token.document._actor.setFlag('hitpoint-tint', 'ignore_token', true);
