@@ -9,15 +9,19 @@ Intended to make it easier for players to see approximate health of creatures wi
 
 ## Ignore tokens
 The folloing macro will mark the selected tokens to be ignored by the module
-```canvas.tokens.controlled.map( token => {
+```js
+canvas.tokens.controlled.map( token => {
 	token.document._actor.setFlag('hitpoint-tint', 'ignore_token', true);
 	token.document.update({tint: '#ffffff'});
-});```
+});
+```
 
 Use the following macro for the tint to work again:
-```canvas.tokens.controlled.map( token => {
+```js
+canvas.tokens.controlled.map( token => {
 	token.document._actor.unsetFlag('hitpoint-tint', 'ignore_token');
-});```
+});
+```
 
 ## Requirements / Limitations:
 - https://github.com/ardittristan/VTTColorSettings is used for settings / color picking.
