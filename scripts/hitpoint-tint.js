@@ -104,7 +104,7 @@ Hooks.on("preUpdateActor", (actor, updateData) => {
     {
       canvas.scene.updateEmbeddedDocuments(actor.parent.documentName,  [{
         tint: newColor,
-        _id: actor.parent.id,.  
+        _id: actor.parent.id,  
       }]);
     }
 
